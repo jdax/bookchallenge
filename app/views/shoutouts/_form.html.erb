@@ -1,0 +1,15 @@
+<%= simple_form_for @book do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :superlatives,
+                collection: Value.all, label_method: :name, value_method: :id,
+                prompt: "What value(s) did they uphold this past week? (please select a maximum of 2)",
+                input_html: {class: "selectize", multiple: true, data: {max_items: 2}} %>
+
+    <%= f.input :title %>
+    <%= f.input :author %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :goodreads_url %>
+    <%= f.submit %>
+<% end %>
+

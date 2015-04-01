@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Shoutout for <% @shoutout.users.each do |recipient| %>
+         <ul><li><%=recipient.first_name %></ul></li>
+    <% end %></h3>
+  </div>
+  <div class="panel-body">
+
+    <h4><% @shoutout.values.each do |value| %>
+         <ul> <li><i class="fa <%= value.icon %>"></i>
+          <%= value.name %></li></ul>
+          <% end %></h4>
+    <p><b>Project:</b> <%= @shoutout.project %></p>
+    <p><b>Details:</b> <%= @shoutout.description %></p>
+  </div>
+</div>
+ <p><%= link_to "Edit", edit_shoutout_path %> | <%= link_to "Home", root_path %></p>

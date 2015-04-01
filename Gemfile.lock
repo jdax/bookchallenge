@@ -65,6 +65,9 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dotenv (2.0.0)
+    dotenv-rails (2.0.0)
+      dotenv (= 2.0.0)
     erubis (2.7.0)
     execjs (2.4.0)
     faraday (0.9.1)
@@ -165,7 +168,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
-      json (~> 1.4)
     redis (3.2.1)
     redis-actionpack (4.0.0)
       actionpack (~> 4)
@@ -199,7 +201,6 @@ GEM
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
-    spring (1.3.3)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -241,6 +242,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  dotenv-rails
   font-awesome-rails
   font-awesome-sass
   httparty
@@ -259,7 +261,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   selectize-rails
   simple_form
-  spring
   turbolinks
   uglifier (>= 1.3.0)
   unf

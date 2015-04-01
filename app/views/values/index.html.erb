@@ -1,0 +1,29 @@
+
+
+<% @values.each_with_index do |value, index| %>
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index+1 %>" aria-expanded="true" aria-controls="collapse">
+
+              <i class="fa <%= value.icon %>"></i><b> <%= value.name %> </b>
+
+            </a>
+          </h4>
+        </div>
+        <div id="collapse<%= index+1 %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading">
+
+          <div class="panel-body">
+
+            <%= value.description %>
+
+          </div>
+        </div>
+
+      </div>
+<% end %>
+    </div>
+
+
