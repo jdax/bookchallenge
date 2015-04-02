@@ -6,9 +6,9 @@ class Book < ActiveRecord::Base
   # superlatives is values
   def superlatives=(ids)
     ids.reject! { |id| id.blank? }
-    shoutout_values.each do |shoutout_value |
+    book_values.each do |book_value |
       ids.reject! do |id|
-        id.to_i==shoutout_value.value_id
+        id.to_i==book_value.value_id
       end
     end
     ids.each do |id|
