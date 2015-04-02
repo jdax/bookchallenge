@@ -19,7 +19,7 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = book.new
+    @book = Book.new
     @values = Value.all.collect do |value|
       [value.name, value.id]
     end

@@ -62,5 +62,5 @@ gem 'font-awesome-rails'
 gem 'selectize-rails'
 gem 'nested_form'
 gem 'font-awesome-sass'
-gem 'httparty'
+
 gem 'will_paginate-bootstrap'

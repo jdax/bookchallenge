@@ -1,0 +1,57 @@
+
+
+
+
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">All Recommendations</h3>
+    </div>
+    <div class="panel-body">
+
+      <%= will_paginate @collection, :param_name => 'all', renderer: BootstrapPagination::Rails %>
+
+      <ul>
+        <% @books.each do |book| %>
+            <li><% book.titles.each { |title| %><i class="fa <%= value.icon %>"></i> <% }%><%= link_to shoutout.titles.each, book_path(book) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">LGB Recommendations</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+
+        <%= will_paginate @lgb, :param_name => 'lgb_page', renderer: BootstrapPagination::Rails %>
+        <% @lgb.each do |lgb| %>
+            <li><%= link_to lgb.title.map, book_path(lgb) %></li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Trans Recommendations</h3>
+    </div>
+    <div class="panel-body">
+
+      <%= will_paginate @trans, :param_name => 'trans_page', renderer: BootstrapPagination::Rails %>
+
+      <% @trans.each do |trans| %>
+          <li><%= link_to trans.values.map(&:name).join(", "), book_path(trans) %></li>
+      <% end %>
+    </div>
+  </div>
+</div>

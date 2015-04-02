@@ -261,11 +261,9 @@ Devise.setup do |config|
   config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], {
                                     :access_type => "offline",
                                     :scope => "email, profile, plus.me",
-                                  
                                     :prompt => "select_account",
                                     :image_aspect_ratio => "square",
                                     :image_size => 50,
-                                    :setup => true,
-                                    
+                                    :setup => true
                                 }
 end
