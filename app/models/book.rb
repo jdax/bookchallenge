@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
   belongs_to :user
-  has_many :shoutout_values
-  has_many :values, through: :shoutout_values
+  has_many :book_values
+  has_many :values, through: :book_values
 
   # superlatives is values
   def superlatives=(ids)
@@ -12,12 +12,12 @@ class Book < ActiveRecord::Base
       end
     end
     ids.each do |id|
-      shoutout_values.build value_id: id
+      book_values.build value_id: id
     end
   end
 
   def superlatives
-    shoutout_values.map(&:value_id)
+    book_values.map(&:value_id)
   end
 
 end
