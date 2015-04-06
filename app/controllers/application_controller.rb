@@ -17,11 +17,12 @@ class ApplicationController < ActionController::Base
 
   def valueslist
 
-    # @lgb = Book.all.where(:value_id => )
-    # @trans = 
-    # @poc =
-    # @disability =
-    # @women = 
+
+    @lgb = Book.joins({:book_values =>:value}).where(:value_id == '1')
+    @trans = Book.joins(:book_values).where(:value_id == '2')
+    @poc = Book.joins(:book_values).where(:value_id == '3')
+    @disability = Book.joins(:book_values).where(:value_id == '5')
+    @women = Book.joins(:book_values).where(:value_id == '4')
   end
 
 

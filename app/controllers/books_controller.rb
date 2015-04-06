@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    @books = @books.paginate(:page => params[:all], :per_page => 7)
+    @collection = @books.paginate(:page => params[:all], :per_page => 7)
     @poc = @poc.paginate(:page => params[:poc_page], :per_page => 7)
     @lgb = @lgb.paginate(:page => params[:lgb_page], :per_page => 7)
     @trans = @trans.paginate(:page => params[:trans_page], :per_page => 7)
@@ -56,7 +56,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:user_id, :description, :value, superlatives: [])
+    params.require(:book).permit(:user_id, :description, :value, :title, :author, superlatives: [])
   end
 
 end

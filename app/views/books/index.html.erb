@@ -13,7 +13,7 @@
 
       <ul>
         <% @books.each do |book| %>
-            <li><% book.titles.each { |title| %><i class="fa <%= value.icon %>"></i> <% }%><%= link_to shoutout.titles.each, book_path(book) %></li>
+            <li><%= link_to book.title, book_path(book) %></li>
         <% end %>
       </ul>
     </div>
@@ -31,7 +31,7 @@
 
         <%= will_paginate @lgb, :param_name => 'lgb_page', renderer: BootstrapPagination::Rails %>
         <% @lgb.each do |lgb| %>
-            <li><%= link_to lgb.title.map, book_path(lgb) %></li>
+            <li><%= link_to lgb.title, book_path(lgb) %></li>
         <% end %>
 
       </ul>
@@ -50,7 +50,55 @@
       <%= will_paginate @trans, :param_name => 'trans_page', renderer: BootstrapPagination::Rails %>
 
       <% @trans.each do |trans| %>
-          <li><%= link_to trans.values.map(&:name).join(", "), book_path(trans) %></li>
+          <li><%= link_to trans.title, book_path(trans) %></li>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Characters of Color Recommendations</h3>
+    </div>
+    <div class="panel-body">
+
+      <%= will_paginate @poc, :param_name => 'poc_page', renderer: BootstrapPagination::Rails %>
+
+      <% @poc.each do |poc| %>
+          <li><%= link_to poc.title, book_path(poc) %></li>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Disability Recommendations</h3>
+    </div>
+    <div class="panel-body">
+
+      <%= will_paginate @disability, :param_name => 'disability_page', renderer: BootstrapPagination::Rails %>
+
+      <% @disability.each do |disability| %>
+          <li><%= link_to disability.title, book_path(disability) %></li>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Women Characters Recommendations</h3>
+    </div>
+    <div class="panel-body">
+
+      <%= will_paginate @women, :param_name => 'women_page', renderer: BootstrapPagination::Rails %>
+
+      <% @women.each do |women| %>
+          <li><%= link_to women.title, book_path(women) %></li>
       <% end %>
     </div>
   </div>

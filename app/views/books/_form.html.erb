@@ -3,7 +3,7 @@
 
     <%= f.input :superlatives,
                 collection: Value.all, label_method: :name, value_method: :id,
-                prompt: "What value(s) did they uphold this past week? (please select a maximum of 2)",
+                prompt: "What value(s) does this book uphold? (please select a maximum of 2)",
                 input_html: {class: "selectize", multiple: true, data: {max_items: 2}} %>
 
     <%= f.input :title %>
