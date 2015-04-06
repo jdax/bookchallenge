@@ -18,18 +18,22 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
-  def new
+ def new
     @book = Book.new
     @values = Value.all.collect do |value|
       [value.name, value.id]
     end
-    @book_values = Value.all
-
+  @book_values = Value.all
+  @users = User.all.collect do |user|
+    [user.first_name, user.id]
+  @value = Value.all
   end
+end
 
   def create
+   params[:book][:user_id] = current_user.id
 
-    @book = Book.create(book_params)
+   @book = Book.create(book_params)
     redirect_to @book
   end
 
