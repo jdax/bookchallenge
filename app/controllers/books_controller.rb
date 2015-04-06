@@ -24,14 +24,11 @@ class BooksController < ApplicationController
       [value.name, value.id]
     end
     @book_values = Value.all
-    @users = User.all.collect do |user|
-       [user.first_name, user.id]
-      @value = Value.all
-    end
+
   end
 
   def create
-    params[:book][:user_id] = current_user.id
+
     @book = Book.create(book_params)
     redirect_to @book
   end
