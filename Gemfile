@@ -52,7 +52,7 @@ end
 
 gem 'rack-cors'
 gem 'redis-rails'
-
+gem 'sprockets-rails'
 gem 'rails_12factor'
 gem 'unf'
 gem 'omniauth-google-oauth2'
