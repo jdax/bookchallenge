@@ -53,7 +53,7 @@ end
 gem 'rack-cors'
 gem 'redis-rails'
 
-gem 'rails_12factor', group: [:production]
+gem 'rails_12factor'
 gem 'unf'
 gem 'omniauth-google-oauth2'
 gem 'bootstrap-sass', '~> 3.3.3'
