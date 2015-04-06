@@ -18,11 +18,11 @@ class ApplicationController < ActionController::Base
   def valueslist
 
 
-    @lgb = Book.joins({:book_values =>:value}).where(:value => {:id => '1'})
-    @trans = Book.joins({:book_values =>:value}).where(:value {:id  => '2')
-    @poc = Book.joins({:book_values =>:value}).where(:value => {:id => '3'})
-    @disability = Book.joins({:book_values =>:value}).where(:value => {:id => '5'})
-    @women = Book.joins({:book_values =>:value}).where(:value => {:id => '4'})
+    @lgb = Book.joins(:book_values, :value).where(:value => {:id => '1'})
+    @trans = Book.joins(:book_values,:value).where(:value {:id  => '2')
+    @poc = Book.joins(:book_values, :value).where(:value => {:id => '3'})
+    @disability = Book.joins(:book_values, :value).where(:value => {:id => '5'})
+    @women = Book.joins(:book_values, :value).where(:value => {:id => '4'})
   end
 
 
